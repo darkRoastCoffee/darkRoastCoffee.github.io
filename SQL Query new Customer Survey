@@ -1,0 +1,8 @@
+select a.Id
+,a.name
+from [Account] a
+left join [Order] o on o.AccountId = a.Id
+where a.CreatedDate > 2025-07-17
+and a.PrimaryGroup = 'placeholderId'
+and o.POType= 'E360'
+and datediff(Day,o.CreatedDate,getdate()) = 14
